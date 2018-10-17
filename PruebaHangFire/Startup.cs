@@ -59,10 +59,7 @@ namespace PruebaHangFire
 
             app.UseMvc();
             app.UseHangfireDashboard();
-            var client = new BackgroundJobClient();
-            IState state = new EnqueuedState("prueba");
-            DTOPrueba prueba = new DTOPrueba();
-            client.Create<ITareaBase>(x => x.Ejecutar(prueba), state);
+           
 
         }
         

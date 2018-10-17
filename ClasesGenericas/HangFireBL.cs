@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClasesGenericas
 {
-    public class DTOPrueba
+    public class HangFireBL
     {
-        public string IdElemento { get; set; }
     }
 }

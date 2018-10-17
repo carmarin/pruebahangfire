@@ -25,8 +25,36 @@ namespace AppSubscribe
         {
             
             InitializeComponent();
+            App.miApp.EjecucionTarea += TareaEjecutada;
         }
 
-        
+        private void TareaEjecutada(object sender, EventArgs e)
+        {
+            Application.Current.Dispatcher.Invoke((Action)delegate {
+
+                lblProcesadas.Content = App.procesadas.Count.ToString();
+                lblReencoladas.Content = App.Reencolar.ToString();
+            });
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            button.IsEnabled = false;
+            textBox.IsEnabled = false;
+            string usuario = textBox.Text;
+            var options = new BackgroundJobServerOptions
+            {
+                ServerName = String.Format(
+                    "{0}.{1}",
+                    Environment.MachineName,
+                    usuario),
+                Queues = new[] { "prueba" },
+                WorkerCount = 1
+            };
+
+            App.Usuario = usuario;
+
+            var server = new BackgroundJobServer(options);
+        }
     }
 }

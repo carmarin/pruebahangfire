@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Label x:Name="label" Content="Usuario" HorizontalAlignment="Left" Margin="260,95,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="405,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button" Content="Habilitar" HorizontalAlignment="Left" Margin="334,153,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.08,-0.273" Click="button_Click"/>
+        <Label x:Name="label1" Content="Procesados:" HorizontalAlignment="Left" Margin="179,273,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="label1_Copy" Content="Reencoladas:" HorizontalAlignment="Left" Margin="179,316,0,0" VerticalAlignment="Top" Width="84"/>
+        <Label x:Name="lblProcesadas" Content="0" HorizontalAlignment="Left" Margin="310,273,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblReencoladas" Content="0" HorizontalAlignment="Left" Margin="310,316,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
